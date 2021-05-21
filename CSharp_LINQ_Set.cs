@@ -4,44 +4,43 @@ using System.Collections.Generic;
 
 namespace System
 {
-	class MainClass
-	{
-		public static void Main(string[] args)
-		{
-			var set = new SetClass();
+    class MainClass
+    {
+        public static void Main(string[] args)
+        {
+            var setClass = new SetClass();
 
-			set.GetSet();
-		}
-	}
+            setClass.GetSet();
+        }
+    }
 
-	class SetClass
-	{
-		List<int> first = new List<int> {2, 3, 4, 5, 6, 7, 8, 9};
-		List<int> second = new List<int> {1, 2, 3, 4, 10, 11, 12};
+    class SetClass
+    {
+        List<int> first = new List<int> {2, 3, 4, 5, 6, 7, 8, 9};
+        List<int> second = new List<int> {1, 2, 3, 4, 10, 11, 12};
 
-		public void GetSet()
-		{
-			// Union()
-			// 和集合を取得
-			IEnumerable<int> union = first.Union(second);
-			foreach (int num in union)
-				Console.Write("{0} ", num);
-			Console.WriteLine();
+        public void GetSet()
+        {
+            // Union()
+            // Get the union set
+            IEnumerable<int> union = first.Union(second);
+            foreach (int num in union)
+                Console.Write("{0} ", num);
+            Console.WriteLine();
 
-			// Except()
-			// 差集合を取得
-			IEnumerable<int> except = first.Except(second);
-			foreach (int num in except)
-				Console.Write("{0} ", num);
-			Console.WriteLine();
+            // Except()
+            // Get the difference set
+            IEnumerable<int> except = first.Except(second);
+            foreach (int num in except)
+                Console.Write("{0} ", num);
+            Console.WriteLine();
 
-			// Intersect()
-			// 積集合を取得
-			IEnumerable<int> intersect = first.Intersect(second);
-			foreach (int num in intersect)
-				Console.Write("{0} ", num);
-			Console.WriteLine();
-		}
-	}
+            // Intersect()
+            // Get the product set
+            IEnumerable<int> intersect = first.Intersect(second);
+            foreach (int num in intersect)
+                Console.Write("{0} ", num);
+            Console.WriteLine();
+        }
+    }
 }
-
